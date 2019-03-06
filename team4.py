@@ -1,6 +1,6 @@
 team_name = 'Thot Patrol' # Only 10 chars displayed.
 strategy_name = 'Exterminate all thots'
-strategy_description = 'Always Betray'
+strategy_description = 'Betray if they colluded last move'
 
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -18,4 +18,10 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'b'
+    if len(my_history) == 0:
+        return 'b'
+    else:
+        if my_history[len(my_history)-1] == 'b' and their_history[len(their_history)-1] == 'c':
+            return 'b'
+        else:
+            return 'c'

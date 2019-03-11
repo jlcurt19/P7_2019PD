@@ -28,7 +28,7 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    x=random.randint(65,95)/100.
+    x=random.randint(65,95)/100.0
     if random.random()<=x:
         return 'b'
     else:
